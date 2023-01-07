@@ -339,6 +339,32 @@ header .form i {
     border-color: var(--main-color);
 }
 
+.tracking-in-expand{
+    animation:tracking-in-expand 5s cubic-bezier(.215,.61,.355,1.000) both;
+    -webkit-animation:tracking-in-expand 5s cubic-bezier(.215,.61,.355,1.000) both;
+}
+
+ @-webkit-keyframes tracking-in-expand{
+    0%{
+        letter-spacing:-.5em;opacity:0
+    }40%{
+        opacity:.6
+    }100%{
+        opacity:1
+    }
+}
+@keyframes tracking-in-expand{
+    0%{
+        letter-spacing:-.5em;opacity:0
+    }
+    0%{
+        opacity:.6
+    }
+    100%{
+        opacity:1
+    }
+}
+
 /* Services */
 
 .services {
@@ -991,3 +1017,92 @@ header .form i {
 }
 
 
+/* Subscribe section */
+
+.subscribe {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("../images/quote.jpg");
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.subscribe::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.subscribe .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 997px) {
+    .subscribe .container {
+        flex-direction: column;
+    }
+}
+
+.subscribe form {
+    display: flex;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
+ 
+.subscribe form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    left: 25px;
+}
+ 
+.subscribe form input[type="email"]{
+    border: 1px solid white; 
+    border-right: none;
+    background: none;
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px); 
+}
+ 
+.subscribe form input[type="submit"]{
+    width: 130px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-left: none;
+    text-transform: uppercase;
+}
+
+.subscribe form input[type="submit"],
+.subscribe form input[type="email"] {
+    outline: none;
+}
+
+.subscribe form ::placeholder {
+    color: white;
+} 
+
+.subscribe p {
+    line-height: 2;
+        margin-left: 50px;
+}
+
+@media (max-width: 997px) {
+    .subscribe p {
+        margin: 30px 0 0;
+    }
+}
